@@ -3,8 +3,6 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 public class ClientTest {
 
@@ -12,7 +10,7 @@ public class ClientTest {
     final static Phone MOBILE_PHONE = new Phone(ANY_NUMBER, true);
     final static Phone STATIONARY_PHONE = new Phone(ANY_NUMBER, false);
 
-    Client client = mock(Client.class);
+    Client client = new Client();
 
     @Test
     public void hasMobile() {
@@ -27,6 +25,5 @@ public class ClientTest {
         List<Phone> phones = client.getPhones();
         phones.forEach(System.out::println);
         phones.forEach(phone -> System.out.println(phone.isMobile()));
-        verify(client).addPhone(MOBILE_PHONE);
     }
 }

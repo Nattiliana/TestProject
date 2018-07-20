@@ -33,7 +33,7 @@ public class CarTest {
 
     @Test
     public void testVerification() {
-        //myFerrari.driveTo("Sweet home Alabama");
+        myFerrari.driveTo("Sweet home Alabama");
         myFerrari.needsFuel();
         verify(myFerrari).driveTo("Sweet home Alabama");
         verify(myFerrari).needsFuel();
